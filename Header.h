@@ -92,7 +92,7 @@ public:
 	}
 };
 
-void FindAvarageAge(vector<Guest> A)
+void FindAverageAge(vector<Guest> A)
 {
 	double result1 = 0, result2 = 0;
 	int k1 = 0, k2 = 0;
