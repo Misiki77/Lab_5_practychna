@@ -19,8 +19,8 @@ int main()
 	guest[0].SetGender(Gender::Male); 
 	guest[1].SetGender(Gender::Male); 
 	guest[2].SetGender(Gender::Male);
-	guest[3].SetGender(Gender::Famele);
-	guest[4].SetGender(Gender::Famele);
+	guest[3].SetGender(Gender::Female);
+	guest[4].SetGender(Gender::Female);
 	guest[5].SetGender(Gender::Male); 
 	guest[6].SetGender(Gender::Male);
 
