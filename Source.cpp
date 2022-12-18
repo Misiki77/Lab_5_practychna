@@ -38,6 +38,6 @@ int main()
 			guest[i].isLuckyPhoneNumber();
 		}
 
-		FindAvarageAge(guest);
+		FindAverageAge(guest);
 
 }
