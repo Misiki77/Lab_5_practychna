@@ -8,7 +8,7 @@ using namespace std;
 
 enum Gender
 {
-	Male, Famele, Non_Binary
+	Male, Female, Non_Binary
 };
 
 class Guest
@@ -17,11 +17,11 @@ private:
 	string name;
 	int age;
 	string city;
-	int phonenumber;
+	int phone_number;
 
 	Gender gender;
 public:
-	friend void FindAvarageAge(vector<Guest> A);
+	friend void FindAverageAge(vector<Guest> A);
 	int id;
 	Guest()
 	{
@@ -29,7 +29,7 @@ public:
 		name = "";
 		age = 0;
 		city = "";
-		phonenumber = 0;
+		phone_number = 0;
 	}
 	Guest(int id, string name, int age, string city, int phonenumber)
 	{
@@ -37,7 +37,7 @@ public:
 		this->name = name;
 		this->age = age;
 		this->city = city;
-		this->phonenumber = phonenumber;
+		this->phone_number = phonenumber;
 	}
 	void SetGender(Gender gender)
 	{
@@ -60,18 +60,18 @@ public:
 		int res = 0;
 		for (int i = 0; i < 7; i++)
 		{
-			if (phonenumber % 10 == 7)
+			if (phone_number % 10 == 7)
 			{
 				res++;
 			}
-			phonenumber /= 10;
+			phone_number /= 10;
 		}
 		if (res >= 3)
 			cout << name << "- your number is Lucky\n";
 	}
 	void Print()
 	{
-		cout << "Name - " << name << "\nID - " << id << "\nAge - " << age << "\nCity - " << city << "\nPhonenumber - " << phonenumber << endl << endl;
+		cout << "Name - " << name << "\nID - " << id << "\nAge - " << age << "\nCity - " << city << "\nPhonenumber - " << phone_number << endl << endl;
 	}
 };
 class Party
@@ -80,7 +80,6 @@ class Party
 private:
 	string day;
 	string reason;
-
 public:
 	void Setter(string day, string reason)
 	{
@@ -100,7 +99,7 @@ void FindAvarageAge(vector<Guest> A)
 	for (int i = 0; i < 7; i++)
 	{
 
-		if (A[i].GetGender() == Gender::Famele)
+		if (A[i].GetGender() == Gender::Female)
 		{
 			result1 += A[i].GetAge();
 			k1++;
