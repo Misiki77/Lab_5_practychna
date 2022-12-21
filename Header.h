@@ -13,14 +13,14 @@ enum Gender
 
 class Guest
 {
-private:
+ private:
 	string name;
 	int age;
 	string city;
 	int phone_number;
 
 	Gender gender;
-public:
+ public:
 	friend void FindAverageAge(vector<Guest> A);
 	int id;
 	Guest()
@@ -57,16 +57,16 @@ public:
 	}
 	void isLuckyPhoneNumber()
 	{
-		int res = 0;
+		int number_of_7_in_phone_number = 0;
 		for (int i = 0; i < 7; i++)
 		{
 			if (phone_number % 10 == 7)
 			{
-				res++;
+				number_of_7_in_phone_number++;
 			}
 			phone_number /= 10;
 		}
-		if (res >= 3)
+		if (number_of_7_in_phone_number >= 3)
 			cout << name << "- your number is Lucky\n";
 	}
 	void Print()
@@ -77,10 +77,10 @@ public:
 class Party
 {
 	friend Guest;
-private:
+ private:
 	string day;
 	string reason;
-public:
+ public:
 	void Setter(string day, string reason)
 	{
 		this->day = day;
@@ -94,23 +94,23 @@ public:
 
 void FindAverageAge(vector<Guest> A)
 {
-	double result1 = 0, result2 = 0;
-	int k1 = 0, k2 = 0;
+	double sum_of_females_ages = 0, sum_of_males_ages = 0;
+	int number_of_females_guests = 0, number_of_males_guests = 0;
 	for (int i = 0; i < 7; i++)
 	{
 
 		if (A[i].GetGender() == Gender::Female)
 		{
-			result1 += A[i].GetAge();
-			k1++;
+			sum_of_females_ages += A[i].GetAge();
+			number_of_females_guests++;
 		}
 		if (A[i].GetGender() == Gender::Male)
 		{
-			result2 += A[i].GetAge();
-			k2++;
+			sum_of_males_ages += A[i].GetAge();
+			number_of_males_guests++;
 		}
 	}
-	result1 /= k1;
-	result2 /= k2;
-	cout << "\nAvarage girl age - " << result1 << "\nAvarage boy age - " << result2 << endl;
+	sum_of_females_ages /= number_of_females_guests;
+	sum_of_males_ages /= number_of_males_guests;
+	cout << "\nAvarage girl age - " << sum_of_females_ages << "\nAvarage boy age - " << sum_of_males_ages << endl;
 }
